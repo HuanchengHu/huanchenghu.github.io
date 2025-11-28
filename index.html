@@ -1,58 +1,269 @@
 <!DOCTYPE html>
-<html>
-<head profile="http://www.w3.org/2005/10/profile">
-<meta charset="UTF-8">
-<link rel="icon" 
-      type="image/png" 
-      href="./img/favicon.webp">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Huancheng(Watson) Hu</title>
-<meta name="discription" content="Huancheng Hu's Portfolio Page">
-<link rel="stylesheet" href="./stylesheet.css">
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Huangcheng Hu · Cyber Security Researcher</title>
+  <meta name="description" content="Academic homepage of Huangcheng Hu, covering biography, publications, and contact information.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-BnC2E31E4n4t4DccnE9vrFica8FWHZcizxgxYkWwaP42gnikIze8ih/7gToYtL6vhfVqlhK/SXGEdq8np5x9/Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dracula.min.css" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-sA+4J2JbJzP0p1rjzDkPwhYp4Xv0vZG9Q6bYQ0gAelE=" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-wrapper">
+  <header class="page-header">
+    <nav class="navbar" id="navbar-main" aria-label="Primary">
+      <div class="brand">
+        <a class="navbar-brand" href="#about">Huangcheng Hu</a>
+        <span class="brand-role">Cyber Security Researcher</span>
+      </div>
+      <button class="navbar-toggle" aria-label="Toggle navigation" data-toggle="nav">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="navbar-links" role="menubar">
+        <a href="#about" role="menuitem">Home</a>
+        <a href="#collection" role="menuitem">Publications</a>
+        <a href="#contact" role="menuitem">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search" data-open="search">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="icon-btn" aria-label="Toggle color theme" data-toggle="theme">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-<div class="lang_bar">
-    <a href="./index.html">EN</a>
-    <a href="./index_cn.html">CN</a>
+  <main class="page-body">
+    <section id="about" class="home-section">
+      <div class="about-grid">
+        <aside class="profile-card">
+          <div class="avatar-wrap">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80" alt="Portrait of Huangcheng Hu" class="avatar">
+            <span class="avatar-badge" aria-hidden="true">👋</span>
+          </div>
+          <h1>Huangcheng Hu</h1>
+          <p class="role">Assistant Professor · TU Delft</p>
+          <ul class="meta-list">
+            <li><i class="fas fa-map-marker-alt"></i>Delft, The Netherlands</li>
+            <li><i class="fas fa-envelope"></i><a href="mailto:huangcheng.hu@example.com">huangcheng.hu@example.com</a></li>
+            <li><i class="fas fa-building"></i>Cyber Security Group, EEMCS</li>
+          </ul>
+          <ul class="network-icon" aria-label="Social links">
+            <li><a href="https://scholar.google.com" target="_blank" rel="noreferrer" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a></li>
+            <li><a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/huanchenghu" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+          </ul>
+        </aside>
 
-</div>
+        <article class="bio-panel">
+          <header>
+            <p class="eyebrow">Biography</p>
+            <h2>Understanding how adversaries probe and stretch Internet infrastructure.</h2>
+          </header>
+          <p>
+            I study the security, privacy, and resilience of large-scale networks. My group mixes Internet-wide measurements,
+            programmable networks, and trustworthy ML pipelines to surface evolving attack strategies and translate evidence
+            into deployable countermeasures. Before joining TU Delft, I spent two years at the Hasso Plattner Institute and
+            partnered with telecom operators to harden automation stacks.
+          </p>
+          <p>
+            My recent projects explore: (1) longitudinal scans that expose evergreen botnets, (2) privacy-preserving telemetry
+            for regulated environments, and (3) safety guardrails for LLM-driven SOC tooling. I enjoy collaborating with
+            operations teams, agencies, and student founders on measurement-driven defenses.
+          </p>
 
-<div class="sidenav">
-    <div class="navblock">
-        <div class="navblock_text">
-            <a style="color:#3498DB" href="./index.html">About</a>
-            <a href="./resume.html">Resume</a>
-            <!-- <a href="./research.html">Research</a> -->
-            <!-- <a href="./portfolio.html">Portfolio</a>-->
-            <!--<a href="./blog.html">Blog</a>-->
-        </div>
+          <div class="info-cards">
+            <section>
+              <h3>Research Interests</h3>
+              <ul class="pill-list">
+                <li>Internet Measurements</li>
+                <li>Network Security</li>
+                <li>Threat Intelligence</li>
+                <li>Secure Distributed Systems</li>
+                <li>Privacy Engineering</li>
+                <li>Autonomous Defense</li>
+              </ul>
+            </section>
+            <section>
+              <h3>Education</h3>
+              <ul class="timeline">
+                <li>
+                  <strong>Ph.D. Cyber Threat Intelligence</strong>
+                  <span>Delft University of Technology · 2023</span>
+                </li>
+                <li>
+                  <strong>M.Sc. Cyber Security</strong>
+                  <span>Delft University of Technology · 2018</span>
+                </li>
+                <li>
+                  <strong>B.Sc. Computer Science</strong>
+                  <span>Zhejiang University · 2016</span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="collection" class="home-section publications">
+      <div class="section-heading">
+        <p class="eyebrow">Recent Publications</p>
+        <h2>Tracing adversarial behavior through data-driven stories.</h2>
+        <p>Hand-curated highlights; browse the full list on Google Scholar or via DOI links.</p>
+      </div>
+      <div class="filter-bar">
+        <label class="search-field">
+          <span>Filter publications</span>
+          <input type="search" placeholder="Search by title, venue, or keyword" data-filter="publications">
+        </label>
+        <a class="see-all" href="https://harmgriffioen.github.io/" target="_blank" rel="noreferrer">See all records <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="publication-list-simple">
+        <article class="publication-entry">
+          <h3>Have you SYN me? Characterizing ten years of Internet scanning</h3>
+          <p class="pub-meta">IMC 2024 · Internet Measurements</p>
+          <p>
+            Longitudinal analysis of unsolicited traffic across distributed telescopes that reveals persistent scanning
+            infrastructures and practical mitigation playbooks inspired by [1].
+          </p>
+          <p class="pub-authors">Huangcheng Hu, Giorgos Koursiounis, Georgios Smaragdakis, Christian Doerr</p>
+        </article>
+        <article class="publication-entry">
+          <h3>Could you clean up the Internet with a Pit of Tar?</h3>
+          <p class="pub-meta">IEEE S&amp;P 2023 · Network Defense</p>
+          <p>
+            Evaluates the feasibility of large-scale tarpitting against IoT worms by combining passive telemetry with
+            operator-friendly interventions, mirroring the narrative style used in [1].
+          </p>
+          <p class="pub-authors">Huangcheng Hu, Christian Doerr</p>
+        </article>
+        <article class="publication-entry">
+          <h3>How to Operate a Meta-Telescope in your Spare Time</h3>
+          <p class="pub-meta">IMC 2023 · Measurement Systems</p>
+          <p>
+            Introduces a cloud-native orchestration stack for dozens of network telescopes, enabling reproducible and
+            low-cost measurement campaigns across continents, similar to discussions in [1].
+          </p>
+          <p class="pub-authors">Daniel Wagner, Sahil A. Ranadive, Huangcheng Hu, Michalis Kallitsis, Alberto Dainotti, Georgios Smaragdakis, Anja Feldmann</p>
+        </article>
+        <article class="publication-entry">
+          <h3>SIP Bruteforcing in the Wild: Adversaries, Techniques, and Tools</h3>
+          <p class="pub-meta">IFIP Networking 2023 · VoIP Security</p>
+          <p>
+            Provides the first Internet-scale study of SIP brute-force toolchains, covering attacker personas, automation
+            tactics, and countermeasures, echoing the storytelling approach seen in [1].
+          </p>
+          <p class="pub-authors">Huangcheng Hu, Christian Doerr</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="home-section contact-section">
+      <div class="section-heading">
+        <p class="eyebrow">Contact</p>
+        <h2>Let’s collaborate on trustworthy measurement tooling.</h2>
+        <p>For student supervision, joint proposals, or measurements with societal impact, drop me a message.</p>
+      </div>
+      <div class="contact-list">
+        <p><strong>Email:</strong> <a href="mailto:huangcheng.hu@example.com">huangcheng.hu@example.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Huangcheng Hu. Inspired by the elegant academic layout of Harm Griffioen’s site [1].</p>
+    <p>Published with a handcrafted static build.</p>
+  </footer>
+
+  <dialog id="search-modal" aria-label="Search publications">
+    <header>
+      <h2>Search</h2>
+      <button class="icon-btn" aria-label="Close search" data-close="search"><i class="fas fa-times"></i></button>
+    </header>
+    <div class="search-body">
+      <input type="search" placeholder="Type keywords" data-filter="publications">
+      <p class="search-hint">Type to filter the highlighted publications list.</p>
     </div>
-    <div class="footer">
-        <p>&copy; 2022 Huancheng Hu</p>
-    </div>
-</div>
+  </dialog>
 
-<div class="main">
-    <div >
-        <img src="./img/photo.jpeg" alt="Huancheng Hu" class="about_photo">
-    </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j7kGSt9n7G8JH45gLJIYurxQYC1glgLrQJk8hTs=" crossorigin=""></script>
+  <script>
+    const root = document.documentElement;
+    const nav = document.querySelector('.navbar');
+    const navToggle = document.querySelector('[data-toggle="nav"]');
+    const navLinks = document.querySelector('.navbar-links');
+    const themeToggle = document.querySelector('[data-toggle="theme"]');
+    const searchButtons = document.querySelectorAll('[data-open="search"]');
+    const searchClose = document.querySelector('[data-close="search"]');
+    const searchModal = document.getElementById('search-modal');
+    const publicationCards = Array.from(document.querySelectorAll('.publication-entry'));
+    const filterInputs = document.querySelectorAll('[data-filter="publications"]');
 
-    <div class="about_text">
-        <h1>Huancheng(Watson) Hu</h1>
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      root.setAttribute('data-theme', storedTheme);
+      document.body.setAttribute('data-theme', storedTheme);
+    }
 
-        <p>Hi, I'm Huancheng Hu but you can call me Watson.</p>
-        <p>I am a cybersecurity researcher and a PhD student. Welcome to my website.</p>
-        <p> <b>Email:huancheng.hu@hpi.de</b> </p>
+    themeToggle?.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', current);
+      document.body.setAttribute('data-theme', current);
+      localStorage.setItem('theme', current);
+    });
 
-        <div class="about_links">
-            <a class="about_links" target="blank" href="https://www.linkedin.com/in/huanchenghu">LinkedIn</a>
-            <a class="about_links" target="blank" href="https://github.com/huanchenghu">GitHub</a>
-        </div>
-    </div>
-</div>
+    navToggle?.addEventListener('click', () => {
+      navLinks?.classList.toggle('is-open');
+    });
 
+    function filterPublications(value) {
+      const query = value.toLowerCase().trim();
+      publicationCards.forEach((card) => {
+        const matches = card.textContent.toLowerCase().includes(query);
+        card.classList.toggle('is-hidden', !matches);
+      });
+    }
 
+    filterInputs.forEach((input) => {
+      input.addEventListener('input', (event) => filterPublications(event.target.value));
+    });
 
+    searchButtons.forEach((btn) => btn.addEventListener('click', () => {
+      if (searchModal) {
+        searchModal.showModal();
+        const input = searchModal.querySelector('input');
+        setTimeout(() => input?.focus(), 50);
+      }
+    }));
+
+    searchClose?.addEventListener('click', () => searchModal?.close());
+
+    const yearTarget = document.getElementById('year');
+    if (yearTarget) {
+      yearTarget.textContent = new Date().getFullYear();
+    }
+
+    if (document.getElementById('map')) {
+      const map = L.map('map', {
+        scrollWheelZoom: false
+      }).setView([51.99958, 4.37769], 15);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+      L.marker([51.99958, 4.37769]).addTo(map).bindPopup('TU Delft · Cyber Security Group');
+    }
+  </script>
 </body>
-</html> 
+</html>
