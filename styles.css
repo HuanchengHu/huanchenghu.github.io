@@ -345,10 +345,16 @@ a:focus-visible {
 
 .search-field {
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  color: var(--muted);
+  flex-direction: row;    /* make span + input in a row */
+  align-items: center;    /* vertically center them */
+  background: #f8f8f8;
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #ddd;
+}
+
+.search-field span {
+  margin-right: 0.5rem;
 }
 
 .search-field input {
