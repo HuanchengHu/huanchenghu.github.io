@@ -28,11 +28,21 @@
 
 body {
   margin: 0;
-  font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
   line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Montserrat', sans-serif;
+  letter-spacing: 0.005em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Montserrat', sans-serif;
+  letter-spacing: 0.01em;
 }
 
 img {
@@ -74,22 +84,12 @@ a:focus-visible {
   gap: 1rem;
 }
 
-.brand {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
 .navbar-brand {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-family: 'Inter', 'Montserrat', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   color: var(--text);
-}
-
-.brand-role {
-  font-size: 0.85rem;
-  color: var(--muted);
 }
 
 .navbar-links {
@@ -109,6 +109,13 @@ a:focus-visible {
 .navbar-links a:focus-visible {
   background: var(--accent-soft);
   color: var(--accent);
+}
+
+/* Active nav item when its section is in view */
+.navbar-links a.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .navbar-links.is-open {

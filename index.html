@@ -8,7 +8,7 @@
   <meta name="description" content="Academic homepage of Huangcheng Hu, covering biography, publications, and contact information.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-BnC2E31E4n4t4DccnE9vrFica8FWHZcizxgxYkWwaP42gnikIze8ih/7gToYtL6vhfVqlhK/SXGEdq8np5x9/Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" media="(prefers-color-scheme: light)">
@@ -21,7 +21,6 @@
     <nav class="navbar" id="navbar-main" aria-label="Primary">
       <div class="brand">
         <a class="navbar-brand" href="#about">Huangcheng Hu</a>
-        <span class="brand-role">Cyber Security Researcher</span>
       </div>
       <button class="navbar-toggle" aria-label="Toggle navigation" data-toggle="nav">
         <i class="fas fa-bars"></i>
@@ -203,7 +202,7 @@
     const root = document.documentElement;
     const nav = document.querySelector('.navbar');
     const navToggle = document.querySelector('[data-toggle="nav"]');
-    const navLinks = document.querySelector('.navbar-links');
+    const navLinks = document.querySelector('.navbar-links'); // container for links
     const themeToggle = document.querySelector('[data-toggle="theme"]');
     const searchButtons = document.querySelectorAll('[data-open="search"]');
     const searchClose = document.querySelector('[data-close="search"]');
@@ -264,6 +263,54 @@
       }).addTo(map);
       L.marker([51.99958, 4.37769]).addTo(map).bindPopup('TU Delft · Cyber Security Group');
     }
+
+    // Navigation highlighting based on current section
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.navbar-links a'); // individual links
+
+function updateActiveNavLink() {
+  const scrollY = window.scrollY;
+  const viewportBottom = scrollY + window.innerHeight;
+  const pageHeight = document.documentElement.scrollHeight;
+
+  // Remove active class from all links first
+  navItems.forEach(link => link.classList.remove('active'));
+
+  // Find which section is currently in view
+  let currentSection = '';
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 150; // offset for better UX
+    const sectionBottom = sectionTop + section.offsetHeight;
+
+    if (scrollY >= sectionTop && scrollY < sectionBottom) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  // If we're at the very top, default to 'about'
+  if (scrollY < 100) {
+    currentSection = 'about';
+  }
+
+  // If we're near the bottom of the page, force 'contact' as active
+  if (viewportBottom >= pageHeight - 50) {
+    currentSection = 'contact';
+  }
+
+  // Add active class to the corresponding nav link
+  if (currentSection) {
+    const activeLink = document.querySelector(`.navbar-links a[href="#${currentSection}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
+  }
+}
+
+
+    // Update on scroll and load
+    window.addEventListener('scroll', updateActiveNavLink);
+    window.addEventListener('load', updateActiveNavLink);
+    updateActiveNavLink();
   </script>
 </body>
 </html>
