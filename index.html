@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Huancheng Hu(Watson) · Cyber Security Researcher</title>
+  <title>Huancheng(Watson) Hu · Cyber Security Researcher</title>
   <meta name="description" content="Academic homepage of Huancheng Hu, covering biography, publications, and contact information.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -224,6 +224,7 @@
     const nav = document.querySelector('.navbar');
     const navToggle = document.querySelector('[data-toggle="nav"]');
     const navLinks = document.querySelector('.navbar-links'); // container for links
+    const navItems = document.querySelectorAll('.navbar-links a'); // individual links
     const themeToggle = document.querySelector('[data-toggle="theme"]');
     const searchButtons = document.querySelectorAll('[data-open="search"]');
     const searchClose = document.querySelector('[data-close="search"]');
@@ -246,6 +247,16 @@
 
     navToggle?.addEventListener('click', () => {
       navLinks?.classList.toggle('is-open');
+    });
+
+    // Close mobile menu when clicking on any navigation link
+    navItems.forEach((link) => {
+      link.addEventListener('click', () => {
+        // Check if we're in mobile view (menu is open)
+        if (navLinks?.classList.contains('is-open')) {
+          navLinks.classList.remove('is-open');
+        }
+      });
     });
 
     function filterPublications(value) {
@@ -317,7 +328,6 @@
 
     // Navigation highlighting based on current section
     const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.navbar-links a'); // individual links
 
 function updateActiveNavLink() {
   const scrollY = window.scrollY;
