@@ -188,8 +188,8 @@ a:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 30% 20%; /* adjust vertical position */
-  transform: scale(1.3);       /* zoom to make yourself bigger */
+  object-position: right 80%; /* adjust vertical position */
+  transform: scale(1.2);       /* zoom to make yourself bigger */
 }
 
 
