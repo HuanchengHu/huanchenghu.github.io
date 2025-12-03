@@ -180,24 +180,29 @@ a:focus-visible {
   width: 220px;
   height: 220px;
   margin: 0 auto 1.5rem;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .avatar {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid var(--bg);
+  object-position: 30% 20%; /* adjust vertical position */
+  transform: scale(1.3);       /* zoom to make yourself bigger */
 }
+
 
 .avatar-badge {
   position: absolute;
-  bottom: 12px;
-  right: 30px;
+  bottom: 30px;          /* move slightly inward */
+  right: 30px;           /* move slightly inward */
   background: var(--surface-alt);
   border-radius: 50%;
-  padding: 0.4rem;
-  font-size: 1.2rem;
+  padding: 0.25rem;     /* make badge a bit smaller so it fits */
+  font-size: 1rem;
+  /* optional: make it pop a bit */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
 .profile-card h1 {
