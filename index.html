@@ -31,9 +31,6 @@
         <a href="#contact" role="menuitem">Contact</a>
       </div>
       <div class="nav-actions">
-        <button class="icon-btn" aria-label="Search" data-open="search">
-          <i class="fas fa-search"></i>
-        </button>
         <button class="icon-btn" aria-label="Toggle color theme" data-toggle="theme">
           <i class="fas fa-sun"></i>
           <i class="fas fa-moon"></i>
@@ -197,7 +194,7 @@
         <p>For collaboration opportunities, drop me a message.</p>
       </div>
       <div class="contact-list">
-        <p><strong>Email:</strong> <a href="mailto:huancheng.hu@hpi.de">huancheng.hu@hpi.de</a></p>
+        <li><i class="fas fa-envelope"></i><a href="mailto:huancheng.hu@hpi.de"> huancheng.hu@hpi.de</a></li>
       </div>
     </section>
   </main>
@@ -211,16 +208,17 @@
 
   <dialog id="search-modal" aria-label="Search publications">
     <header>
-      <h2>Search</h2>
+      <h2>Search Publications</h2>
       <button class="icon-btn" aria-label="Close search" data-close="search"><i class="fas fa-times"></i></button>
     </header>
     <div class="search-body">
-      <input type="search" placeholder="Type keywords" data-filter="publications">
-      <p class="search-hint">Type to filter the highlighted publications list.</p>
+      <input type="search" id="modal-search-input" placeholder="Type to search titles, venues, or keywords" data-filter="publications">
+      <p class="search-hint">Start typing to filter publications. Press Escape or click × to close.</p>
+      <div id="search-results-info" style="margin-top: 1rem; color: var(--muted); font-size: 0.9rem;"></div>
     </div>
   </dialog>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j7kGSt9n7G8JH45gLJIYurxQYC1glgLrQJk8hTs=" crossorigin=""></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j7kGSt9n7G8JH45gLJIYurxQYC1glgLrQJk8hTs=" crossorigin=""></script>
   <script>
     const root = document.documentElement;
     const nav = document.querySelector('.navbar');
@@ -252,14 +250,28 @@
 
     function filterPublications(value) {
       const query = value.toLowerCase().trim();
+      let visibleCount = 0;
       publicationCards.forEach((card) => {
         const matches = card.textContent.toLowerCase().includes(query);
         card.classList.toggle('is-hidden', !matches);
+        if (matches) visibleCount++;
       });
+      
+      // Update search results info in modal
+      const resultsInfo = document.getElementById('search-results-info');
+      if (resultsInfo) {
+        if (query.length === 0) {
+          resultsInfo.textContent = '';
+        } else {
+          resultsInfo.textContent = `Found ${visibleCount} publication${visibleCount !== 1 ? 's' : ''} matching "${query}"`;
+        }
+      }
     }
 
     filterInputs.forEach((input) => {
-      input.addEventListener('input', (event) => filterPublications(event.target.value));
+      input.addEventListener('input', (event) => {
+        filterPublications(event.target.value);
+      });
     });
 
     searchButtons.forEach((btn) => btn.addEventListener('click', () => {
@@ -271,6 +283,22 @@
     }));
 
     searchClose?.addEventListener('click', () => searchModal?.close());
+    
+    // Close modal with Escape key and clear search
+    searchModal?.addEventListener('close', () => {
+      const modalInput = document.getElementById('modal-search-input');
+      if (modalInput) {
+        modalInput.value = '';
+        filterPublications(''); // Reset filter
+      }
+    });
+    
+    // Allow Escape key to close modal
+    searchModal?.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchModal.close();
+      }
+    });
 
     const yearTarget = document.getElementById('year');
     if (yearTarget) {
@@ -321,4 +349,19 @@ function updateActiveNavLink() {
   }
 
   // Add active class to the corresponding nav link
-  if (currentS
+  if (currentSection) {
+    const activeLink = document.querySelector(`.navbar-links a[href="#${currentSection}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
+  }
+}
+
+
+    // Update on scroll and load
+    window.addEventListener('scroll', updateActiveNavLink);
+    window.addEventListener('load', updateActiveNavLink);
+    updateActiveNavLink();
+  </script>
+</body>
+</html>
