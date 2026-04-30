@@ -307,11 +307,35 @@ a:focus-visible {
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--accent);
-  margin-bottom: 0.4rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.6rem;
+  display: inline-block;
+  position: relative;
+  line-height: 1.2;
+}
+
+.eyebrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.25rem;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.section-heading .eyebrow {
+  display: block;
+}
+
+.section-heading .eyebrow::after {
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .info-cards {
