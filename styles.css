@@ -492,6 +492,16 @@ a:focus-visible {
   font-size: 0.7rem;
 }
 
+.pub-badge__tier {
+  margin-left: 0.35rem;
+  padding: 0.02rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
 .publication-entry .pub-authors {
   font-size: 0.9rem;
   color: var(--muted);
