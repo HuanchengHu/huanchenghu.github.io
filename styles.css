@@ -246,6 +246,11 @@ a:focus-visible {
   margin: 0.4rem 0;
 }
 
+html[lang="zh-CN"] .profile-card h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
 .role {
   color: var(--muted);
   margin-bottom: 1rem;
