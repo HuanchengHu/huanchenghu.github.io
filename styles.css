@@ -468,6 +468,30 @@ a:focus-visible {
   margin-bottom: 0.5rem;
 }
 
+.pub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.12rem 0.55rem;
+  margin: 0 0.15rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  vertical-align: baseline;
+}
+
+.pub-badge--spotlight {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.35);
+}
+
+.pub-badge--spotlight i {
+  font-size: 0.7rem;
+}
+
 .publication-entry .pub-authors {
   font-size: 0.9rem;
   color: var(--muted);
