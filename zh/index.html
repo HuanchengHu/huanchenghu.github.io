@@ -27,6 +27,7 @@
       </button>
       <div class="navbar-links" role="menubar">
         <a href="#about" role="menuitem">主页</a>
+        <a href="#disclosures" role="menuitem">漏洞披露</a>
         <a href="#collection" role="menuitem">论文发表</a>
         <a href="#contact" role="menuitem">联系</a>
       </div>
@@ -116,6 +117,49 @@
             </section>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section id="disclosures" class="home-section disclosures">
+      <div class="section-heading">
+        <p class="eyebrow">漏洞披露</p>
+        <p>我在研究工作中发现并披露的漏洞。</p>
+      </div>
+      <div class="advisory-list">
+        <ul class="cve-list">
+          <li class="cve-entry">
+            <div class="cve-head">
+              <a class="cve-id" href="https://www.cve.org/CVERecord?id=CVE-2026-9219" target="_blank" rel="noreferrer">CVE-2026-9219</a>
+              <span class="sev-badge sev-medium">中危 · 6.5</span>
+              <span class="cve-cwe">CWE-340</span>
+            </div>
+            <p class="cve-desc">注册 ID 可由设备 IMEI 预测推导，且注册环节缺乏额外认证，攻击者可借此注册属于其他用户的设备。</p>
+          </li>
+          <li class="cve-entry">
+            <div class="cve-head">
+              <a class="cve-id" href="https://www.cve.org/CVERecord?id=CVE-2026-9220" target="_blank" rel="noreferrer">CVE-2026-9220</a>
+              <span class="sev-badge sev-high">高危 · 7.5</span>
+              <span class="cve-cwe">CWE-321</span>
+            </div>
+            <p class="cve-desc">设备与后端之间的请求使用静态硬编码的 AES 密钥与初始化向量加密，攻击者可借此解密相关流量。</p>
+          </li>
+          <li class="cve-entry">
+            <div class="cve-head">
+              <a class="cve-id" href="https://www.cve.org/CVERecord?id=CVE-2026-9221" target="_blank" rel="noreferrer">CVE-2026-9221</a>
+              <span class="sev-badge sev-high">高危 · 7.5</span>
+              <span class="cve-cwe">CWE-327</span>
+            </div>
+            <p class="cve-desc">请求签名使用 MD5，可被逆向以恢复会话 ID，进而冒充合法用户发起经过认证的 API 调用。</p>
+          </li>
+          <li class="cve-entry">
+            <div class="cve-head">
+              <a class="cve-id" href="https://www.cve.org/CVERecord?id=CVE-2026-9222" target="_blank" rel="noreferrer">CVE-2026-9222</a>
+              <span class="sev-badge sev-high">高危 · 8.1</span>
+              <span class="cve-cwe">CWE-836</span>
+            </div>
+            <p class="cve-desc">后端在认证时仅需密码哈希本身，掌握该哈希的攻击者即可完成认证并获得完全访问权限。</p>
+          </li>
+        </ul>
       </div>
     </section>
 

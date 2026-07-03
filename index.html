@@ -27,6 +27,7 @@
       </button>
       <div class="navbar-links" role="menubar">
         <a href="#about" role="menuitem">Home</a>
+        <a href="#disclosures" role="menuitem">Vulnerability Disclosures</a>
         <a href="#collection" role="menuitem">Publications</a>
         <a href="#contact" role="menuitem">Contact</a>
       </div>
@@ -127,6 +128,49 @@
             </section>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section id="disclosures" class="home-section disclosures">
+      <div class="section-heading">
+        <p class="eyebrow">Vulnerability Disclosures</p>
+        <p>Vulnerabilities I discovered and disclosed through my research.</p>
+      </div>
+      <div class="advisory-list">
+        <ul class="cve-list">
+          <li class="cve-entry">
+            <div class="cve-head">
+              <a class="cve-id" href="https://www.cve.org/CVERecord?id=CVE-2026-9219" target="_blank" rel="noreferrer">CVE-2026-9219</a>
+              <span class="sev-badge sev-medium">Medium · 6.5</span>
+              <span class="cve-cwe">CWE-340</span>
+            </div>
+            <p class="cve-desc">Registration ID is predictably derived from the device IMEI with no extra authentication at enrollment, letting an attacker enroll devices belonging to other users.</p>
+          </li>
+          <li class="cve-entry">
+            <div class="cve-head">
+              <a class="cve-id" href="https://www.cve.org/CVERecord?id=CVE-2026-9220" target="_blank" rel="noreferrer">CVE-2026-9220</a>
+              <span class="sev-badge sev-high">High · 7.5</span>
+              <span class="cve-cwe">CWE-321</span>
+            </div>
+            <p class="cve-desc">Requests between the device and backend are encrypted with static, hardcoded AES keys and initialization vectors, allowing an attacker to decrypt the traffic.</p>
+          </li>
+          <li class="cve-entry">
+            <div class="cve-head">
+              <a class="cve-id" href="https://www.cve.org/CVERecord?id=CVE-2026-9221" target="_blank" rel="noreferrer">CVE-2026-9221</a>
+              <span class="sev-badge sev-high">High · 7.5</span>
+              <span class="cve-cwe">CWE-327</span>
+            </div>
+            <p class="cve-desc">Request signatures use MD5, which can be reversed to recover the session ID and impersonate a legitimate user for authenticated API calls.</p>
+          </li>
+          <li class="cve-entry">
+            <div class="cve-head">
+              <a class="cve-id" href="https://www.cve.org/CVERecord?id=CVE-2026-9222" target="_blank" rel="noreferrer">CVE-2026-9222</a>
+              <span class="sev-badge sev-high">High · 8.1</span>
+              <span class="cve-cwe">CWE-836</span>
+            </div>
+            <p class="cve-desc">The backend accepts the password hash itself for authentication, so an attacker who obtains the hash can authenticate and gain full access.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
